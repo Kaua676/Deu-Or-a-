@@ -1,0 +1,52 @@
+# Arquivos do Python
+__pycache__/
+*.py[cod]
+*.so
+*.pyo
+*.pyd
+*.swp
+*.swo
+
+# Ambiente Virtual
+venv/
+env/
+*.venv
+*.env
+
+# Configurações e credenciais sensíveis
+.env
+*.sqlite3
+db.sqlite3
+instance/
+config.json
+
+# Arquivos do Django
+*.log
+*.pot
+*.pyc
+*.pyc
+*.db
+db.sqlite3
+media/
+staticfiles/
+static/
+local_settings.py
+
+# Migrations compiladas
+**/migrations/*.py
+**/migrations/*.pyc
+
+# Arquivos do PostgreSQL (caso use dumps locais)
+*.dump
+*.sql
+
+# Arquivos do VS Code e PyCharm
+.vscode/
+.idea/
+*.iml
+
+# Cache e logs
+*.log
+*.bak
+.DS_Store
+Thumbs.db
