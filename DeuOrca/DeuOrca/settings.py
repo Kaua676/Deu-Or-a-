@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'DeuOrca.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'orcamentos_db',
-        'USER': 'teu_usuario',
-        'PASSWORD': 'tua_senha',
+        'NAME': 'DeuOrca',
+        'USER': 'postgres',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
     }
