@@ -1,0 +1,26 @@
+<!-- orcamentos/templates/orcamentos/criar_orcamento.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Novo Orçamento</title>
+</head>
+<body>
+    <h1>Criar Orçamento</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Descrição:</label>
+        <input type="text" name="descricao"><br><br>
+
+        <label>Valor:</label>
+        <input type="number" name="valor"><br><br>
+
+        <label>Tipo:</label>
+        <select name="tipo">
+            <option value="produto">Produto</option>
+            <option value="servico">Serviço</option>
+        </select><br><br>
+
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>
