@@ -15,25 +15,19 @@ env/
 
 # Configurações e credenciais sensíveis
 .env
-*.sqlite3
-db.sqlite3
 instance/
-config.json
 
 # Arquivos do Django
 *.log
 *.pot
 *.pyc
 *.pyc
-*.db
-db.sqlite3
 media/
 staticfiles/
 static/
 local_settings.py
 
 # Migrations compiladas
-**/migrations/*.py
 **/migrations/*.pyc
 
 # Arquivos do PostgreSQL (caso use dumps locais)
