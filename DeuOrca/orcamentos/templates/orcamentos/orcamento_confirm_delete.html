@@ -1,0 +1,8 @@
+{% extends 'base.html' %}{% block content %}
+<h2>Excluir?</h2>
+<p>Excluir orçamento de <strong>{{ object.cliente }}</strong>?</p>
+<form method="post">{% csrf_token %}
+    <button class="btn btn-danger">Sim, excluir</button>
+    <a class="btn btn-secondary" href="{% url 'orcamento_list' %}">Cancelar</a>
+</form>
+{% endblock %}

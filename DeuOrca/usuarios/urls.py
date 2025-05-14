@@ -1,15 +1,9 @@
-# usuarios/urls.py
-
 from django.urls import path
-from . import views
+from .views import RegistroView, CustomLoginView, CustomLogoutView, profile
 
 urlpatterns = [
-    # Telas HTML
-    path('cadastrar/', views.tela_cadastro, name='cadastrar_usuario'),
-    path('login/', views.tela_login, name='login_usuario'),
-
-    # APIs
-    path('api/cadastrar/', views.api_cadastrar_usuario),
-    path('api/login/', views.api_login_usuario),
-    path('api/recuperar_senha/', views.api_recuperar_senha),
+    path('registrar/', RegistroView.as_view(), name='register'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
+    path('perfil/', profile, name='profile'),
 ]

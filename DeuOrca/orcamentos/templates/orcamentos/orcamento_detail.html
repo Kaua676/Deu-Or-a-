@@ -1,0 +1,13 @@
+{% extends 'base.html' %}{% block content %}
+<h2>Orçamento #{{ object.id }}</h2>
+<ul class="list-group mb-3">
+    <li class="list-group-item"><strong>Cliente:</strong> {{ object.cliente }}</li>
+    <li class="list-group-item"><strong>Descrição:</strong> {{ object.descricao }}</li>
+    <li class="list-group-item"><strong>Valor:</strong> R$ {{ object.valor }}</li>
+    <li class="list-group-item"><strong>Desconto:</strong> R$ {{ object.desconto }}</li>
+    <li class="list-group-item"><strong>Imposto:</strong> {{ object.imposto }}%</li>
+    <li class="list-group-item"><strong>Total:</strong> R$ {{ total }}</li>
+    <li class="list-group-item"><strong>Criado em:</strong> {{ object.criado_em|date:"d/m/Y H:i" }}</li>
+</ul>
+<a class="btn btn-secondary" href="{% url 'pdfs:orcamento_pdf' object.id %}">Gerar PDF</a>
+{% endblock %}

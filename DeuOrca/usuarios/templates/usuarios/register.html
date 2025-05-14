@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block content %}
+<h2>Cadastrar</h2>
+<form method="post" class="row g-3">{% csrf_token %}
+  {{ form.as_p }}
+  <div class="col-12">
+    <button class="btn btn-primary">Registrar</button>
+    <a class="btn btn-link" href="{% url 'login' %}">Já tenho conta</a>
+  </div>
+</form>
+{% endblock %}

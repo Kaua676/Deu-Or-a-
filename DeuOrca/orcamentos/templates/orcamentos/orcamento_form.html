@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block content %}
+<h2>{{ form.instance.pk|yesno:"Editar Orçamento,Novo Orçamento" }}</h2>
+<form method="post" class="row g-3">{% csrf_token %}
+    {{ form.as_p }}
+    <div class="col-12">
+        <button class="btn btn-primary">Salvar</button>
+        <a class="btn btn-secondary" href="{% url 'orcamento_list' %}">Cancelar</a>
+    </div>
+</form>
+{% endblock %}

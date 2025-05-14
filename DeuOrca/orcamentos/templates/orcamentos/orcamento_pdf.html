@@ -1,0 +1,43 @@
+{# templates/orcamentos/orcamento_pdf.html #}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <style>
+    /* importa um pouco do Bootstrap para o PDF */
+    @page { size: A4; margin: 1cm; }
+    body { font-family: Arial, sans-serif; font-size: 12px; }
+    h1 { text-align: center; margin-bottom: 1rem; }
+    .table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    .table th, .table td { border: 1px solid #333; padding: 4px; }
+    .text-right { text-align: right; }
+  </style>
+</head>
+<body>
+  <h1>Orçamento #{{ object.id }}</h1>
+  <p><strong>Cliente:</strong> {{ object.cliente }}</p>
+  <p><strong>Data:</strong> {{ object.criado_em|date:"d/m/Y H:i" }}</p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Descrição</th>
+        <th class="text-right">Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in object.itens.all %}
+      <tr>
+        <td>{{ item.descricao }}</td>
+        <td class="text-right">R$ {{ item.valor|floatformat:2 }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p><strong>Subtotal:</strong> R$ {{ object.subtotal|floatformat:2 }}</p>
+  <p><strong>Desconto:</strong> R$ {{ object.desconto|floatformat:2 }}</p>
+  <p><strong>Impostos:</strong> R$ {{ object.imposto|floatformat:2 }}</p>
+  <h2>Total: R$ {{ object.total|floatformat:2 }}</h2>
+</body>
+</html>
