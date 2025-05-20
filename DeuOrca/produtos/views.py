@@ -12,9 +12,6 @@ def cadastrar_produto(request):
         form = ProdutoForm()
     return render(request, 'cadastrar_produto.html', {'form': form})
 
-from django.shortcuts import render, redirect
-from .models import Produto
-from .forms import ProdutoForm
 
 def listar_produtos(request):
     produtos = Produto.objects.all()
